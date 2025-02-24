@@ -9,9 +9,7 @@ import Modal from "@/components/Modal";
 import EditProfile from "@/components/EditProfile";
 import Image from "next/image";
 
-interface ProfileContentProps {}
-
-export default function ProfileContent({}: ProfileContentProps) {
+export default function ProfileContent() {
   const { user } = useUser();
   const { signOut } = useClerk();
   const router = useRouter();

@@ -162,16 +162,20 @@ export default function EditProfile({ onClose }: EditProfileProps) {
             <div className="relative">
               <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200">
                 {previewImage ? (
-                  <img
+                  <Image
                     src={previewImage}
                     alt="Preview"
                     className="w-full h-full object-cover"
+                    width={96}
+                    height={96}
                   />
                 ) : (
-                  <img
+                  <Image
                     src={user?.imageUrl}
                     alt={user?.fullName || "Profile"}
                     className="w-full h-full object-cover"
+                    width={96}
+                    height={96}
                   />
                 )}
               </div>
