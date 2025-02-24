@@ -5,17 +5,11 @@ import { ITask } from "@/models/Task";
 
 interface TaskCardProps {
   task: ITask;
-  onEdit?: (task: ITask) => void;
   onDelete: (taskId: string) => void;
   onStatusChange: (taskId: string, status: "pending" | "completed") => void;
 }
 
-const TaskCard = ({
-  task,
-  onEdit,
-  onDelete,
-  onStatusChange,
-}: TaskCardProps) => {
+const TaskCard = ({ task, onDelete, onStatusChange }: TaskCardProps) => {
   const formatDate = (date: Date) => {
     return new Date(date).toLocaleDateString("en-US", {
       month: "short",

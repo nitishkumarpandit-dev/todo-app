@@ -7,12 +7,11 @@ import Layout from "@/components/Layout";
 import { useTaskContext } from "@/context/TaskContext";
 import Modal from "@/components/Modal";
 import EditProfile from "@/components/EditProfile";
+import Image from "next/image";
 
-interface ProfileContentProps {
-  userId: string;
-}
+interface ProfileContentProps {}
 
-export default function ProfileContent({ userId }: ProfileContentProps) {
+export default function ProfileContent({}: ProfileContentProps) {
   const { user } = useUser();
   const { signOut } = useClerk();
   const router = useRouter();
@@ -55,9 +54,11 @@ export default function ProfileContent({ userId }: ProfileContentProps) {
           <div className="flex items-start space-x-8 mb-8">
             <div className="w-32 h-32 bg-gray-200 rounded-full overflow-hidden">
               {user?.imageUrl ? (
-                <img
+                <Image
                   src={user.imageUrl}
                   alt={user.fullName || "Profile"}
+                  width={128}
+                  height={128}
                   className="w-full h-full object-cover"
                 />
               ) : (

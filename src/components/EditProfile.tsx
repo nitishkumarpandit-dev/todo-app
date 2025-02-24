@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useUser } from "@clerk/nextjs";
 import { FiCamera, FiX, FiCheck } from "react-icons/fi";
+import Image from "next/image";
 
 interface EditProfileProps {
   onClose: () => void;
@@ -138,7 +139,6 @@ export default function EditProfile({ onClose }: EditProfileProps) {
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
-
   return (
     <div className="max-w-2xl mx-auto">
       {error && (

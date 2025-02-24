@@ -6,11 +6,9 @@ import Layout from "@/components/Layout";
 import TaskList from "@/components/TaskList";
 import { useTaskContext } from "@/context/TaskContext";
 
-interface CompletedContentProps {
-  userId: string;
-}
+interface CompletedContentProps {}
 
-export default function CompletedContent({ userId }: CompletedContentProps) {
+export default function CompletedContent() {
   const [searchQuery, setSearchQuery] = useState("");
   const { tasks } = useTaskContext();
 
